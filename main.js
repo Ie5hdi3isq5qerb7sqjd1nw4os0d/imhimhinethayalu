@@ -1,5 +1,5 @@
 const P = require('pino')
-const { default: AlphaXmakeWASocket, useSingleFileAuthState, DisconnectReason} = require("@adiwajshing/baileys")
+const { default: AlphaXmakeWASocket, useSingleFileAuthState } = require("@adiwajshing/baileys")
 const chalk = require("chalk")
 const fs = require('fs')
 
