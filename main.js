@@ -1,5 +1,5 @@
 const P = require('pino')
-const { useSingleFileAuthState } = require("@adiwajshing/baileys")
+const { useSingleFileAuthState, makeInMemoryStore } = require("@adiwajshing/baileys")
 const makeWASocket = require("@adiwajshing/baileys").default
 const chalk = require("chalk")
 const fs = require('fs')
