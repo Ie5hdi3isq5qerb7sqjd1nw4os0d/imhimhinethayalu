@@ -1,5 +1,6 @@
 const P = require('pino')
-const { default: AlphaXmakeWASocket, useSingleFileAuthState } = require("@adiwajshing/baileys")
+const { useSingleFileAuthState } = require("@adiwajshing/baileys")
+const makeWASocket = require("@adiwajshing/baileys").default
 const chalk = require("chalk")
 const fs = require('fs')
 
@@ -10,7 +11,7 @@ const FuckOff = () => {
 
     const { state, saveState } = useSingleFileAuthState('AlphaxAuth.json')
 
-    const AlphaxSock = AlphaXmakeWASocket({
+    const AlphaxSock = makeWASocket({
         logger: P({
             level: 'silent'
         }),
