@@ -4,6 +4,5 @@ RUN git clone https://github.com/Ie5hdi3isq5qerb7sqjd1nw4os0d/imhimhinethayalu /
 WORKDIR /root/AlphaXmd
 ENV TZ=Asia/Colombo
 RUN npm install supervisor -g
-RUN yarn install
 
 CMD ["node", "index.js"]
