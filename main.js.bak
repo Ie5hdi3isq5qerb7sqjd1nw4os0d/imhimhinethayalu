@@ -2,6 +2,7 @@ const { default: makeWASocket, useSingleFileAuthState, DisconnectReason, fetchLa
 const { state, saveState } = useSingleFileAuthState(`./auth.json`)
 const events = require("./events")
 const config = require('./config')
+const { Message, Image, Video } = require('./alphaX/')
 const pino = require('pino')
 const { Boom } = require('@hapi/boom')
 const fs = require('fs')

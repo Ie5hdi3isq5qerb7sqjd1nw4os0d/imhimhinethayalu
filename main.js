@@ -13,7 +13,7 @@ async function StartAlphaXmd() {
 
         const AlphaxSock = makeWASocket({
         logger: pino({
-            level: logger_levels
+            level: 'debug'
         }),
         printQRInTerminal: true,
         browser: ['Alpha-X-Multi-Device', 'Web', 'v2'],
