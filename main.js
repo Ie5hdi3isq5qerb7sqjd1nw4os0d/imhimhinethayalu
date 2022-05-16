@@ -1,5 +1,5 @@
-const { default: makeWASocket, useSingleFileAuthState, makeInMemoryStore} = require('@adiwajshing/baileys');
-const { state, saveState } = useSingleFileAuthState('./alphaX/auth.json');
+const { default: makeWASocket, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
+const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
 const pino = require('pino');
 const fs = require("fs");
 const path = require("path");
@@ -41,7 +41,7 @@ const plugindb = require('./plugins/sql/plugin');
 var OWN = {
     ff: '94772978164,0,94763983965,0'
 }
-
+/*
 String.prototype.format = function() {
     var i = 0,
         args = arguments;
@@ -71,6 +71,7 @@ Array.prototype.remove = function() {
     }
     return this;
 };
+*/
 
 async function AlphaxBot() {
 
@@ -96,7 +97,7 @@ async function AlphaxBot() {
     }
 
     // WaSocket 🚀
-
+    
     const store = makeInMemoryStore({
         logger: pino()
             .child({
@@ -108,11 +109,9 @@ async function AlphaxBot() {
     await new Promise(r => setTimeout(r, 500));
 
     const AlphaxSock = makeWASocket({
-        logger: pino({
-            level: logger_levels
-        }),
+        logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
-        browser: ['Alpha-X-Multi-Device', 'Web', 'v2'],
+        browser: ['Hisoka Multi Device','Safari','1.0.0'],
         auth: state
     });
     
