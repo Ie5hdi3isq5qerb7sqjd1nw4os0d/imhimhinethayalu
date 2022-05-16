@@ -15,7 +15,7 @@ async function StartAlphaXmd() {
         printQRInTerminal: true,
         browser: ['Alpha-X-Multi-Device', 'Web', 'v2'],
         auth: state
-        });
+    });
 
     // anticall auto block
     hisoka.ws.on('CB:call', async (json) => {
