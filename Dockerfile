@@ -1,17 +1,10 @@
-FROM node:lts-buster
+FROM node:latest
 
-RUN apt-get update && \
-  apt-get install -y \
-  ffmpeg \
-  imagemagick \
-  webp && \
-  apt-get upgrade -y && \
-  rm -rf /var/lib/apt/lists/*
-
+WORKDIR /root/AlphaXmd
 COPY package.json .
-
+RUN npm install supervisor -g
 RUN npm install
-
 COPY . .
+CMD ["npm", "start"]
 
-CMD ["node", "."]
+# © Alpha-X-MD-Bot 2022
