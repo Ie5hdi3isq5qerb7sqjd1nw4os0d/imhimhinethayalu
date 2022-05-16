@@ -117,6 +117,7 @@ async function AlphaxBot() {
     
     store.bind(AlphaxSock.ev)
 
+/*
     AlphaxSock.ev.on('connection.update', async(update) => {
 
         console.log(chalk.green.bold('🏃 Ａｌｐｈａ-Ｘ-WA-Bot Running...'));
@@ -157,7 +158,7 @@ async function AlphaxBot() {
                     console.log('❌ Some Plugins Have Errors: ' + plugin.dataValues.name)
                 }
             });
-*/
+
             // ==================== End External Plugins ====================
 
             // ====================== Internal Plugins ======================
@@ -228,10 +229,11 @@ async function AlphaxBot() {
             };
         };
     });
+*/
     
     AlphaxSock.ev.on('creds.update', saveState);
 
-    AlphaxSock.ev.on("chats.upsert", async(m) => {
+    AlphaxSock.ev.on("messages.upsert", async(m) => {
 
         if (!m.hasNewMessage) return;
         if (!m.messages && !m.count) return;
