@@ -20,7 +20,7 @@ async function StartAlphaXmd() {
         auth: state
         });
 
-    AlphaXSock.ev.on('messages.upsert', async msg => {
+    AlphaxSock.ev.on('messages.upsert', async msg => {
         console.log(JSON.stringify(msg, undefined, 2))
     })
 }
